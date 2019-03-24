@@ -1,0 +1,6 @@
+<div id="search-component">
+  <h4>Chore Search</h4>
+
+  <input [(ngModel)]="selected" [typeahead]="suggestions$" [typeaheadAsync]="true" typeaheadOptionField="name" (typeaheadOnSelect)="typeaheadOnSelect($event)"
+    class="form-control">
+</div>

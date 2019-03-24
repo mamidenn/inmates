@@ -1,0 +1,30 @@
+<h2>My Chores</h2>
+<form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="choreName">Chore name:</label>
+    <input #choreName class="form-control" id="choreName" />
+  </div>
+  <button (click)="add(choreName.value); choreName.value=''" class="btn btn-primary mb-2">add</button>
+</form>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Chore</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let chore of chores">
+      <th scope="row">{{chore.id}}</th>
+      <td>
+        <a routerLink="/detail/{{chore.id}}">{{chore.name}}</a>
+      </td>
+      <td>
+        <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Delete" (click)="delete(chore)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

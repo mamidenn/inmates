@@ -1,0 +1,10 @@
+<h3>Top Chores</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let chore of chores" class="col-1-4" routerLink="/detail/{{chore.id}}">
+    <div class="module chore">
+      <h4>{{chore.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-chore-search></app-chore-search>

@@ -1,0 +1,12 @@
+<div *ngIf="chore">
+  <h2>{{chore.name | uppercase}}</h2>
+  <div><span>id: </span>{{chore.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="chore.name" placeholder="name" />
+    </label>
+  </div>
+</div>
+
+<button (click)="save()">save</button>
+<button (click)="goBack()">go back</button>
